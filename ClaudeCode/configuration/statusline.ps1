@@ -6,8 +6,6 @@ $input = [Console]::In.ReadToEnd()
 $json = $input | ConvertFrom-Json
 
 # Log input if debug mode is enabled
-# Prompt: Add a --debug flag to @statusline.sh that logs the input JSON to .claude/statusline.log with timestamps.
-# Add a second line showing the last user prompt. Extract from the transcript file at ~/.claude/projects/{encoded-path}/{session_id}.json, find the last user message, display with -> symbol, and truncate to 100 characters with ... if longer.
 if ($debugMode) {
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     $logEntry = "[$timestamp] Input JSON: $input`n"
@@ -47,14 +45,20 @@ if ($json.transcript_path) {
             for ($i = $lines.Length - 1; $i -ge 0; $i--) {
                 try {
                     $entry = $lines[$i] | ConvertFrom-Json
-                    if ($entry.type -eq "user" -and $entry.message -and $entry.message.content) {
+                    if ($entry.type -eq "user" -and $entry.message -and $entry.message.role -eq "user" -and $entry.message.content) {
                         if ($entry.message.content -is [string]) {
                             $lastUserMessage = $entry.message.content
                         } elseif ($entry.message.content -is [array] -and $entry.message.content.Count -gt 0) {
-                            $lastUserMessage = $entry.message.content[0].text -or $entry.message.content[0].content -or $entry.message.content
+                            if ($entry.message.content[0].text) {
+                                $lastUserMessage = $entry.message.content[0].text
+                            } elseif ($entry.message.content[0].content) {
+                                $lastUserMessage = $entry.message.content[0].content
+                            } else {
+                                $lastUserMessage = $entry.message.content[0]
+                            }
                         }
-                        if ($lastUserMessage -and $lastUserMessage.Length -gt 100) {
-                            $lastUserMessage = $lastUserMessage.Substring(0, 100) + "..."
+                        if ($lastUserMessage -and $lastUserMessage.Length -gt 150) {
+                            $lastUserMessage = $lastUserMessage.Substring(0, 150) + "..."
                         }
                         break
                     }
@@ -81,5 +85,5 @@ if ($json.transcript_path) {
 [Console]::Write([char]27 + "[36m" + "[STYLE] enterprise-dotnet" + [char]27 + "[0m")
 [Console]::WriteLine("")
 if ($lastUserMessage) {
-    [Console]::WriteLine([char]27 + "[36m" + "-> " + $lastUserMessage + [char]27 + "[0m")
+    [Console]::WriteLine([char]27 + "[37m" + "--> " + $lastUserMessage + [char]27 + "[0m")
 }
