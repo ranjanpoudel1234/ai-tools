@@ -1,0 +1,9 @@
+{
+  "enabledMcpjsonServers": [
+    "ados",
+    "playwright",
+    "microsoft_docs_mcp",
+    "context7"
+  ],
+  "enableAllProjectMcpServers": true
+}

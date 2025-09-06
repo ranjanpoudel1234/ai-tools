@@ -1,0 +1,22 @@
+
+{
+  "mcpServers": {
+    "ados": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["y", "@azure-devops/mcp", "", "--auth", "interactive"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "microsoft_docs_mcp": {
+      "type": "http",
+      "url": "https://learn.microsoft.com/api/mcp"
+    },
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp"
+    }
+  }
+}
