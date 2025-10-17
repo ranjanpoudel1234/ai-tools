@@ -1,6 +1,38 @@
 {
+  "permissions": {
+    "allow": [
+     
+      "Bash(cat:*)",
+      "WebFetch(domain:medium.com)",
+      "WebSearch",
+      "Read(//c/Users/261906/.claude/**)",
+      "Bash(claude --version)",
+      "Bash(dotnet build:*)",
+      "Bash(find:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(dotnet test:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(echo:*)",
+      "Bash(timeout:*)",
+      "Bash(dotnet run:*)",
+      "Bash(dotnet list:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
   "hooks": {
     "Stop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -ExecutionPolicy Bypass C:\\Users\\261906\\.claude\\notify-task-complete.ps1"
+          }
+        ]
+      }
+    ],
+    "Notification": [
       {
         "matcher": ".*",
         "hooks": [
@@ -16,22 +48,5 @@
     "type": "command",
     "command": "powershell.exe -ExecutionPolicy Bypass C:\\Users\\261906\\.claude\\statusLine.ps1 --debug"
   },
-  "permissions": {
-    "allow": [
-      "Bash(dotnet test:*)",
-	  "Read(C:\\Users\\261906\\.claude/**)",
-      "Read(C:\\Users\\261906\\.claude/**)",
-      "Read(C:\\Users\\261906\\.claude/**)",
-      "Read(C:\\Users\\261906\\.claude/**)",
-      "Read(C:\\Users\\261906\\.claude\\commands/**)",
-      "Read(C:\\Users\\261906\\.claude\\commands/**)",
-      "Read(C:\\Users\\261906\\.claude/**)",
-      "Bash(cat:*)",
-      "WebFetch(domain:medium.com)",
-      "WebSearch",
-      "Read(//c/Users/261906/.claude/**)"
-    ],
-    "deny": [],
-    "ask": []
-  }
+  "alwaysThinkingEnabled": true
 }
