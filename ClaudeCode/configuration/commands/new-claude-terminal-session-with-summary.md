@@ -1,0 +1,1 @@
+create new terminal session for claude code. Summarize the discussion so far. Ensure to use the fork-terminal skill, VERY IMPORTANT
