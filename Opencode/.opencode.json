@@ -1,0 +1,38 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "github": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
+      "enabled": true,
+      "timeout": 60000,
+      "environment": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+      }
+    }
+  },
+  "plugin": ["opencode-command-hooks"],
+  "permission": {
+    "*": "allow",
+      "git push *": "ask",
+      "git commit *": "ask",
+      "git status *": "allow",
+      "git branch -D *": "deny",
+      "git branch -d *": "deny",
+    "bash": {
+      "*": "allow",
+      "git push *": "ask",
+      "git commit *": "ask",
+      "git status *": "allow",
+      "git branch -D *": "deny",
+      "git branch -d *": "deny"
+    }
+  },
+   "keybinds": {
+    "input_paste": "alt+v"
+  }
+}
