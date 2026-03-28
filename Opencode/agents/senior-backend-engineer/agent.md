@@ -1,7 +1,6 @@
 ---
 description: Expert senior backend engineer with 20 years of C# and .NET experience. Proactively use for backend architecture design, code implementation, API design, DDD patterns, SOLID principles, TDD implementation, edge case analysis, and comprehensive code reviews. Specializes in Microsoft stack and scalable enterprise solutions.
 mode: subagent
-model: anthropic/claude-opus-4-20250514
 temperature: 0.1
 tools:
   write: true
@@ -11,7 +10,6 @@ tools:
   grep: true
   glob: true
 skills:
-  - domain-driven-design-guru
   - backend-code-reviewer
 ---
 
