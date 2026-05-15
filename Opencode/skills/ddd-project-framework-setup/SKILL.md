@@ -5,7 +5,7 @@ description: Scaffolds a complete DDD Clean Architecture project framework based
 
 # DDD Project Framework Setup Skill
 
-This skill creates a complete DDD Clean Architecture project structure based on proven patterns from the Vehicle Maintenance Service. It scaffolds all necessary projects, folders, and configuration files for a new service while maintaining the architectural integrity and conventions established in the internal service ecosystem.
+This skill creates a complete DDD Clean Architecture project structure based on proven patterns from the Vehicle Maintenance Service. It scaffolds all necessary projects, folders, and configuration files for a new service while maintaining the architectural integrity and conventions established in the CarMax ERO ecosystem.
 
 ## What This Skill Does
 
@@ -31,7 +31,7 @@ This framework enforces the following architectural patterns from Vehicle Mainte
 2. **NO AutoMapper** - Uses explicit static mapping classes per layer
 3. **Entity Validation Pattern** - Static private validation methods called by factory methods
 4. **Result<T> vs Exceptions** - Prefer throwing exceptions with CustomExceptionFilter for global error handling
-5. **Problem Details Pattern** - Standard error responses following Microsoft/internal guidelines
+5. **Problem Details Pattern** - Standard error responses following Microsoft/CarMax guidelines
 6. **Vertical Slice Architecture** - Application layer organized by feature/resource folders
 7. **FluentValidation** - BasicValidator suffix for DTO validation, business validation in entities
 
@@ -408,9 +408,9 @@ When this skill is invoked, the agent will:
    - Example: "OrderManagement", "InventoryService", "CustomerPortal"
    - Agent will ask: "What is the name of your new project?"
    
-2. **Prompt for Organization Prefix** (optional, default: "Contoso")
-  - Example: "Contoso", "Acme", "CompanyName"
-  - Agent will ask: "What organization prefix should be used? (default: Contoso)"
+2. **Prompt for Organization Prefix** (optional, default: "CarMax")
+   - Example: "CarMax", "Acme", "CompanyName"
+   - Agent will ask: "What organization prefix should be used? (default: CarMax)"
 
 3. **Prompt for Target Directory** (optional, default: "./src")
    - Where to create the solution
@@ -945,7 +945,7 @@ What is the name of your new project? (e.g., OrderManagement, InventoryService)"
 
 User: "CustomerPortal"
 
-Agent: "What organization prefix should be used? (default: Contoso)"
+Agent: "What organization prefix should be used? (default: CarMax)"
 
 User: "Acme"
 

@@ -2,7 +2,6 @@
 description: Expert full-stack frontend engineer specializing in React, TypeScript, Material UI, and BFF architecture. Use proactively for frontend feature development, React component design, BFF API implementation, architecture decisions, performance optimization, and comprehensive testing strategies. Applies TDD, domain-driven design, and SOLID principles to both frontend and backend-for-frontend layers.
 mode: subagent
 temperature: 0.1
-model: anthropic/claude-sonnet-4-20250514
 tools:
   write: true
   edit: true

@@ -121,7 +121,7 @@ The description field is **critical** because:
 3. It should be **specific enough** for correct skill selection
 
 **Good Descriptions**:
-- ✅ "Query store databases using storedata-dotnet MCP server for repair orders, vehicles, and inventory data"
+- ✅ "Query CarMax store databases using kmxstore-dotnet MCP server for repair orders, vehicles, and inventory data"
 - ✅ "Reviews code for architecture, performance, API design, and maintainability. AUTOMATICALLY INVOKE when user mentions code review"
 - ✅ "Interact with Mitchell1 Data Services API to retrieve vehicle maintenance schedules, labor times, and parts information"
 
@@ -414,7 +414,7 @@ Explain why this pattern fits and show the user the structure.
 
 **Examples**:
 ```
-Query store databases using storedata-dotnet MCP server. Use when user asks to query store data, repair orders, vehicles, inventory, or any store database tables.
+Query CarMax store databases using kmxstore-dotnet MCP server. Use when user asks to query store data, repair orders, vehicles, inventory, or any store database tables.
 
 Reviews code for architecture, performance, API design, and maintainability. AUTOMATICALLY INVOKE when user mentions "review", "PR", "pull request", or "code review".
 

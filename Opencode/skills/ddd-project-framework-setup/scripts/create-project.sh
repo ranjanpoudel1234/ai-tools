@@ -13,7 +13,7 @@ CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 # Default values
-ORG_PREFIX="Contoso"
+ORG_PREFIX="CarMax"
 TARGET_DIR="./src"
 INCLUDE_FUNCTIONS=true
 INCLUDE_INTEGRATION_TESTS=false
@@ -24,7 +24,7 @@ usage() {
     echo ""
     echo "Options:"
     echo "  -p PROJECT_NAME              Project name (required, e.g., OrderManagement)"
-    echo "  -o ORG_PREFIX                Organization prefix (default: Contoso)"
+    echo "  -o ORG_PREFIX                Organization prefix (default: CarMax)"
     echo "  -t TARGET_DIR                Target directory (default: ./src)"
     echo "  -f                          Skip Azure Functions project"
     echo "  -i                          Include integration test projects"

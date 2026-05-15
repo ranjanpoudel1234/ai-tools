@@ -22,8 +22,8 @@ Ask these questions in order:
    - Validate: Must start with uppercase, valid C# identifier
    - Store as: PROJECT_NAME
 
-2. "What organization prefix should be used? (default: Contoso)"
-   - Default: "Contoso"
+2. "What organization prefix should be used? (default: CarMax)"
+   - Default: "CarMax"
    - Store as: ORG_PREFIX
 
 3. "Where should the solution be created? (default: ./src)"
@@ -65,7 +65,7 @@ Use the appropriate script based on platform:
 ```powershell
 ./.claude/skills/ddd-project-framework-setup/scripts/create-project.ps1 `
     -ProjectName "OrderManagement" `
-   -OrgPrefix "Contoso" `
+    -OrgPrefix "CarMax" `
     -TargetDir "./src" `
     -IncludeFunctions $true `
     -IncludeIntegrationTests $false
@@ -75,7 +75,7 @@ Use the appropriate script based on platform:
 ```bash
 ./.claude/skills/ddd-project-framework-setup/scripts/create-project.sh \
     -p OrderManagement \
-   -o Contoso \
+    -o CarMax \
     -t ./src \
     -f # Include functions (omit -f to skip)
     # Omit -i for no integration tests
@@ -91,7 +91,7 @@ After script execution:
    ```
 
 2. **Customize .csproj files** (if needed)
-   - Add organization-specific packages
+   - Add CarMax-specific packages
    - Update package versions
    - Add project-specific configuration
 
@@ -121,31 +121,31 @@ Provide clear output to the user:
 ```
 ✓ Project framework created successfully!
 
-Location: ./src/Contoso.OrderManagement/
+Location: ./src/CarMax.OrderManagement/
 
 Structure created:
-✓ Contoso.OrderManagement.Domain
-✓ Contoso.OrderManagement.Domain.Tests
-✓ Contoso.OrderManagement.Application
-✓ Contoso.OrderManagement.Application.Tests
-✓ Contoso.OrderManagement.Infrastructure
-✓ Contoso.OrderManagement.Infrastructure.Tests
-✓ Contoso.OrderManagement.Service
-✓ Contoso.OrderManagement.Service.Tests
-✓ Contoso.OrderManagement.Service.Functions
-✓ Contoso.OrderManagement.Service.Functions.Tests
+✓ CarMax.OrderManagement.Domain
+✓ CarMax.OrderManagement.Domain.Tests
+✓ CarMax.OrderManagement.Application
+✓ CarMax.OrderManagement.Application.Tests
+✓ CarMax.OrderManagement.Infrastructure
+✓ CarMax.OrderManagement.Infrastructure.Tests
+✓ CarMax.OrderManagement.Service
+✓ CarMax.OrderManagement.Service.Tests
+✓ CarMax.OrderManagement.Service.Functions
+✓ CarMax.OrderManagement.Service.Functions.Tests
 
-Solution file: Contoso.OrderManagement.sln
+Solution file: CarMax.OrderManagement.sln
 
 Next steps:
-1. cd ./src/Contoso.OrderManagement
+1. cd ./src/CarMax.OrderManagement
 2. Review README.md for getting started guide
 3. Run 'dotnet build' to verify compilation
 4. Start adding your domain entities in the Domain layer
 5. Refer to AGENTS.md for coding guidelines
 
-Build command: dotnet build Contoso.OrderManagement.sln
-Test command: dotnet test Contoso.OrderManagement.sln
+Build command: dotnet build CarMax.OrderManagement.sln
+Test command: dotnet test CarMax.OrderManagement.sln
 
 Happy coding! 🚀
 ```
@@ -156,11 +156,11 @@ When generating files from templates, replace:
 
 | Token | Description | Example |
 |-------|-------------|---------|
-| `{{Org}}` | Organization prefix | Contoso, Acme |
+| `{{Org}}` | Organization prefix | CarMax, Acme |
 | `{{ProjectName}}` | Project name | OrderManagement |
 | `{{Layer}}` | Layer name | Domain, Application |
 | `{{Folder}}` | Folder within layer | Commands, Entities |
-| `{{FullProjectName}}` | Org.Project | Contoso.OrderManagement |
+| `{{FullProjectName}}` | Org.Project | CarMax.OrderManagement |
 
 ## Directory Structure to Create
 
@@ -272,7 +272,7 @@ What is the name of your new project? (e.g., OrderManagement, CustomerPortal)"
 
 User: "CustomerPortal"
 
-Agent: "What organization prefix should be used? (default: Contoso)"
+Agent: "What organization prefix should be used? (default: CarMax)"
 
 User: "Acme"
 

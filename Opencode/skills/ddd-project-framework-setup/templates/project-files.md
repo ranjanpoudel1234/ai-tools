@@ -160,10 +160,10 @@ These templates are used when creating .csproj files for each layer.
 ## Token Replacement
 
 When generating files, replace these tokens:
-- `{{Org}}` - Organization prefix (e.g., "Contoso", "Acme")
+- `{{Org}}` - Organization prefix (e.g., "CarMax", "Acme")
 - `{{ProjectName}}` - Project name (e.g., "OrderManagement", "CustomerPortal")
 - `{{Layer}}` - Layer name (e.g., "Domain", "Application", "Infrastructure", "Service")
 
 Example:
 - Template: `{{Org}}.{{ProjectName}}.{{Layer}}`
-- Result: `Contoso.OrderManagement.Domain`
+- Result: `CarMax.OrderManagement.Domain`

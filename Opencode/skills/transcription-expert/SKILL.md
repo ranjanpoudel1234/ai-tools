@@ -438,7 +438,7 @@ When documenting business processes from transcription:
 
 #### Steps
 1. **Vehicle arrives** → Technician scans VIN barcode
-   - System: proprietary scanner
+   - System: CarMax proprietary scanner
    - Links to CMXDB for vehicle details
    
 2. **Initial inspection** → Tech documents visible damage

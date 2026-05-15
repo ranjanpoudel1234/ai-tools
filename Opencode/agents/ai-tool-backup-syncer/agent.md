@@ -1,7 +1,6 @@
 ---
 description: Syncs AI tools from ~/.opencode to the personal backup/learning folder at /mnt/c/SelfLearning/AiTools/ai-tools/Opencode/. Use when you want to back up generic (non-company) tools, sanitize CarMax-specific content before archiving, or check what needs syncing. ALWAYS presents a full plan with diffs before doing anything.
 mode: subagent
-model: claude-sonnet-4-20250514
 temperature: 0.1
 tools:
   write: true
@@ -31,7 +30,8 @@ You are the **AiToolBackupSyncer** — a careful, safety-first agent that invent
 
 ### Target folder layout
 - `target/agents/<name>/agent.md`
-- `target/plugins/<name>/` — receives **both** skills and plugins (skills → `plugins/`)
+- `target/skills/<name>/` — receives skills (skills → `skills/`)
+- `target/plugins/<name>/` — receives plugins only (plugins → `plugins/`)
 - `target/commands/**/*.md`
 
 ---
@@ -84,7 +84,7 @@ You are the **AiToolBackupSyncer** — a careful, safety-first agent that invent
 - `senior-backend-engineer`
 - `senior-frontend-engineer`
 
-**Skills (MIGRATE → target `plugins/` folder):**
+**Skills (MIGRATE → target `skills/` folder):**
 - `backend-code-reviewer`
 - `competency-tracker`
 - `ddd-project-framework-setup`
@@ -125,7 +125,7 @@ You are the **AiToolBackupSyncer** — a careful, safety-first agent that invent
 - `github-research-agent.md` *(sanitize "CarMax-Internal" → "your-org")*
 
 **Skills:**
-- `business-objective` *(strip "CarMax", "FY26", company OKR references)*
+- `business-objective` *(strip "CarMax", "FY26", company OKR references → target `skills/` folder)*
 
 ### MANUAL_CHECK — Inspect and ask user before classifying
 
@@ -191,6 +191,7 @@ Run `ls` commands to enumerate all items in:
 
 Run `ls` commands to enumerate existing items in the target:
 - `/mnt/c/SelfLearning/AiTools/ai-tools/Opencode/agents/`
+- `/mnt/c/SelfLearning/AiTools/ai-tools/Opencode/skills/`
 - `/mnt/c/SelfLearning/AiTools/ai-tools/Opencode/plugins/`
 - `/mnt/c/SelfLearning/AiTools/ai-tools/Opencode/commands/`
 
@@ -229,7 +230,7 @@ Present a clear, formatted plan to the user. Group items by status:
 ### 🧹 SANITIZE_THEN_MIGRATE (N items)
 - agents/github-research-agent.md → target/agents/github-research-agent/
   Replacements: "CarMax-Internal" → "your-org"
-- skills/business-objective → target/plugins/business-objective/
+- skills/business-objective → target/skills/business-objective/
   Replacements: "CarMax" → "[YourCompany]", "FY26" → "[CurrentYear]", ...
 
 ### 🔄 NEEDS_UPDATE (N items)
@@ -313,7 +314,7 @@ If any items were BLOCKED, list them again with the reason so the user can addre
 - **Idempotent runs:** Running the agent multiple times should always produce the same result — already-synced items are never re-copied unnecessarily.
 - **Transparent diffs:** For NEEDS_UPDATE items, always show the full unified diff before migrating, even if the user gave a blanket approval.
 - **Sanitization fidelity:** After sanitizing, verify that no residual company-specific terms remain by re-scanning the output.
-- **Target path mapping:** Remember that `skills/` and `plugins/` from source both map to `plugins/` in the target — preserve subfolder structure within.
+- **Target path mapping:** `skills/` from source maps to `skills/` in the target; `plugins/` from source maps to `plugins/` in the target — preserve subfolder structure within each.
 - **File naming for agents:** Source agents are folders (`agents/atlas/agent.md`); target expects the same structure. Use `mkdir -p`.
 - **`github-research-agent.md` special case:** The source is a standalone `.md` file in `agents/`, not a subfolder. Map it to `target/agents/github-research-agent/agent.md`.
 

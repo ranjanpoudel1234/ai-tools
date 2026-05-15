@@ -1,4 +1,4 @@
----
+﻿---
 name: business-objective
 description: Transforms rough work notes into professional [CurrentYear] Business Objectives document mapped to Technology Common Business Objectives. Use when documenting work for performance reviews, tracking contributions to key initiatives, or mapping achievements to E3 excellence framework (Experience, Efficiency, Execution).
 ---
@@ -123,7 +123,7 @@ Examples include:
 #### 3B. Enable Talent Management Culture of Development, Growth and Learning
 Examples include:
 - **Associate Ownership**: Taking ownership of individual learning agenda promoting self-development for continuous growth within role
-- **Development Planning**: Creating and executing development plans that add value for individual, team, and align with company strategy
+- **Development Planning**: Creating and executing development plans that add value for individual, team, and align with [YourCompany] strategy
 - **Learning Activities**: Attending training, courses, certifications, workshops
 - **Mentoring**: Providing guidance and support to team members
 - **Knowledge Sharing**: Leading lunch & learns, chalk talks, guild sessions
@@ -199,7 +199,7 @@ After initial parsing, analyze the criteria coverage and ASK THE USER targeted q
 **Instructions for this step:**
 - Present these questions in a conversational, helpful way
 - Group related questions together
-- Explain WHY you're asking (e.g., "I want to make sure we capture how your work aligns with the current year's focus on key initiatives")
+- Explain WHY you're asking (e.g., "I want to make sure we capture how your work aligns with [CurrentYear]'s focus on achieving more with less")
 - Allow the user to answer what's relevant and skip what's not
 - Use their answers to enrich the documentation
 
@@ -287,7 +287,7 @@ Create a markdown file with this structure:
 
 ---
 *Document generated: [Current Date]*
-*Ready for performance review and promotion discussions*
+*Ready for [CurrentYear] performance review and promotion discussions*
 ```
 
 ### Step 6: Save and Verify
@@ -310,35 +310,35 @@ Ask: "Would you like to add more details, adjust any categorizations, or refine 
 
 ### Examples of Mapping Activities to Sub-Criteria:
 
-**"Delivered [Feature] on schedule"** →
+**"Delivered Sublet Management feature on schedule"** â†’
 - Objective #1, Sub-criteria 1A (Deliver Key Initiatives)
-- Professional output: "Delivered [Feature] on schedule, directly supporting key company initiative and contributing to the team roadmap"
+- Professional output: "Delivered Sublet Management feature on schedule, directly supporting key [YourCompany] initiative and contributing to Service Ops Modernization roadmap"
 
-**"Implemented automated testing framework"** →
+**"Implemented automated testing framework"** â†’
 - Objective #1, Sub-criteria 1B (Improve Delivery Capabilities)
 - Professional output: "Implemented comprehensive automated testing framework, improving code quality and accelerating development velocity by 30%"
 
-**"Researched AI for predictive maintenance"** →
+**"Researched AI for predictive maintenance"** â†’
 - Objective #1, Sub-criteria 1C (Lead Innovation R&D)
 - Professional output: "Conducted research on AI/GenAI applications for predictive maintenance, prototyping solution that could reduce unplanned downtime by 25%"
 
-**"Optimized Cosmos DB to save costs"** →
+**"Optimized Cosmos DB to save costs"** â†’
 - Objective #2, Sub-criteria 2A (Cost/Efficiency)
 - Professional output: "Optimized Cosmos DB configuration through storage optimization and query improvements, reducing operational costs by 40% while maintaining performance standards - achieving more with less"
 
-**"Set up Application Insights dashboard"** →
+**"Set up Application Insights dashboard"** â†’
 - Objective #2, Sub-criteria 2B (Quality/Security/Reliability)
 - Professional output: "Implemented comprehensive Application Insights dashboard with custom metrics and alerting, enabling real-time system visibility and reducing mean time to detection by 75%"
 
-**"Organized team retrospectives"** →
+**"Organized team retrospectives"** â†’
 - Objective #3, Sub-criteria 3A (Associate Engagement)
 - Professional output: "Facilitated monthly team retrospectives and led AVS action plan initiatives, strengthening team culture and engagement in hybrid work environment"
 
-**"Mentored junior developer and completed Azure certification"** →
+**"Mentored junior developer and completed Azure certification"** â†’
 - Objective #3, Sub-criteria 3B (Development/Growth/Learning)
 - Professional output: "Completed Azure Solutions Architect certification and mentored junior developer on cloud architecture patterns, advancing personal learning agenda while supporting team member's development"
 
-**"Interviewed 5 candidates and provided performance feedback"** →
+**"Interviewed 5 candidates and provided performance feedback"** â†’
 - Objective #3, Sub-criteria 3C (Performance/Talent)
 - Professional output: "Conducted technical interviews for 5 engineering candidates and provided developmental feedback to 2 team members, contributing to both talent acquisition and existing team development"
 
@@ -371,3 +371,4 @@ Condensed for bullet: "Implemented Application Insights dashboard with custom me
 
 ## Ready to Begin
 When the user invokes this skill, start with Step 1 and guide them through the process.
+

@@ -100,7 +100,7 @@ Remove a git worktree safely with proper cleanup. This command will:
 
 ### With worktree path provided:
 ```
-You: /remove-worktree ../my-service-feature-old
+You: /remove-worktree ../rome-repairorder-service-feature-old
 Claude: [Lists worktrees, validates, checks remote, asks for confirmation, removes]
 ```
 
@@ -111,7 +111,7 @@ Claude: Here are your current worktrees:
         [Lists all worktrees]
         Which worktree would you like to remove?
 You: feature/old-feature
-Claude: Found worktree at ../my-service-feature-old-feature
+Claude: Found worktree at ../rome-repairorder-service-feature-old-feature
         ⚠️ This worktree has uncommitted changes:
         M  src/file.js
         ?? new-file.js
@@ -124,7 +124,7 @@ Claude: 🔗 This worktree has a remote branch with an open PR:
         2. Remove worktree and delete remote branch (will close PR)
         3. Cancel operation
 You: 1
-Claude: Are you sure you want to remove the worktree at ../my-service-feature-old-feature? (yes/no)
+Claude: Are you sure you want to remove the worktree at ../rome-repairorder-service-feature-old-feature? (yes/no)
 You: yes
 Claude: ✅ Worktree removed successfully!
         🗑️ Local branch 'feature/old-feature' deleted

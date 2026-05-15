@@ -163,7 +163,7 @@ public class NextAction
 **Target**:
 ```csharp
 // NextAction.cs - Immutable record
-namespace Contoso.RepairOrder.Service.Domain.ValueObjects;
+namespace CarMax.RepairOrder.Service.Domain.ValueObjects;
 
 public record NextAction
 {

@@ -1,19 +1,19 @@
 ---
 name: github-research
-description: Search and analyze GitHub repositories, code, pull requests, issues, and commits using GitHub CLI. AUTOMATICALLY INVOKE when user mentions 'search github', 'find repo', 'github search', 'lookup github', 'search code in github', or asks about your-org repositories.
+description: Search and analyze GitHub repositories, code, pull requests, issues, and commits using GitHub CLI. AUTOMATICALLY INVOKE when user mentions 'search github', 'find repo', 'github search', 'lookup github', 'search code in github', or asks about CarMax-Internal repositories.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   author: "261906"
   category: "development"
-  tags: "github,research,search,your-org"
+  tags: "github,research,search,carmax-internal"
   last_updated: "2024-02-13"
 ---
 
 # GitHub Research Assistant
 
-**Purpose**: Expert assistant for researching GitHub repositories, code, and activity using GitHub CLI (`gh`). Specializes in your-org organization but works with any GitHub repository.
+**Purpose**: Expert assistant for researching GitHub repositories, code, and activity using GitHub CLI (`gh`). Specializes in CarMax-Internal organization but works with any GitHub repository.
 
 ---
 
@@ -41,12 +41,12 @@ This skill helps you research and explore GitHub efficiently by:
 - "github code search"
 - "find PRs" / "list pull requests"
 - "github issues"
-- "your-org repositories"
-- "search your-org"
+- "CarMax-Internal repositories"
+- "search CarMax-Internal"
 - "which repos use [X]"
 
 **Also invoke when:**
-- User needs to explore your-org organization
+- User needs to explore CarMax-Internal organization
 - User wants to find repositories using specific technologies
 - User needs to search for code patterns across repos
 - User wants to check PR or issue status
@@ -61,7 +61,7 @@ You can help users with:
 ### Repository Research
 - **Search repos** by name, description, topics, or keywords
 - **View repo details** including README, languages, stats
-- **List repos** in your-org organization
+- **List repos** in CarMax-Internal organization
 - **Filter repos** by language, topic, or visibility
 - **Get repo metadata** (stars, forks, last update, creation date)
 
@@ -103,7 +103,7 @@ You can help users with:
 
 **Prerequisites**: GitHub CLI (`gh`) must be installed and authenticated
 
-**Authentication Status**: You are currently authenticated as `your-github-user`
+**Authentication Status**: You are currently authenticated as `261906_carmax`
 - Token scopes: `read:org`, `read:user`, `repo`
 - Connected to: github.com
 
@@ -122,19 +122,19 @@ export PATH="$HOME/bin:$PATH" && gh auth status
 
 #### Search repositories by keyword
 ```bash
-gh search repos [keyword] --owner your-org --limit 50
+gh search repos [keyword] --owner carmax-internal --limit 50
 ```
 
 **Examples**:
 ```bash
-# Search for related repos
-gh search repos "ero" --owner your-org --limit 50
+# Search for ERO-related repos
+gh search repos "ero" --owner carmax-internal --limit 50
 
 # Search for specific service
-gh search repos "vehicle-maintenance" --owner your-org --limit 20
+gh search repos "vehicle-maintenance" --owner carmax-internal --limit 20
 
 # Search with language filter
-gh search repos "api" --owner your-org --language csharp --limit 30
+gh search repos "api" --owner carmax-internal --language csharp --limit 30
 ```
 
 #### View repository details
@@ -145,27 +145,27 @@ gh repo view [owner/repo]
 **Examples**:
 ```bash
 # View repo details
-gh repo view your-org/logistics-shipment-service
+gh repo view carmax-internal/logistics-shipment-service
 
 # Get JSON output
-gh repo view your-org/ero-modernization-research --json name,description,url,languages,createdAt,updatedAt
+gh repo view carmax-internal/ero-modernization-research --json name,description,url,languages,createdAt,updatedAt
 ```
 
 #### List organization repositories
 ```bash
-gh repo list your-org --limit 100
+gh repo list carmax-internal --limit 100
 ```
 
 **With filters**:
 ```bash
 # Filter by language
-gh repo list your-org --language csharp --limit 50
+gh repo list carmax-internal --language csharp --limit 50
 
 # Filter by topic
-gh repo list your-org --topic ero --limit 30
+gh repo list carmax-internal --topic ero --limit 30
 
 # Get JSON output with specific fields
-gh repo list your-org --json name,description,languages,updatedAt --limit 100
+gh repo list carmax-internal --json name,description,languages,updatedAt --limit 100
 ```
 
 ---
@@ -174,22 +174,22 @@ gh repo list your-org --json name,description,languages,updatedAt --limit 100
 
 #### Search code across repositories
 ```bash
-gh search code [query] --owner your-org --limit 50
+gh search code [query] --owner carmax-internal --limit 50
 ```
 
 **Examples**:
 ```bash
 # Search for specific class or interface
-gh search code "EroHeader" --owner your-org --limit 30
+gh search code "EroHeader" --owner carmax-internal --limit 30
 
 # Search for code pattern
-gh search code "ICommandHandler" --owner your-org --language csharp --limit 20
+gh search code "ICommandHandler" --owner carmax-internal --language csharp --limit 20
 
 # Search in specific file types
-gh search code "mitchell" --owner your-org --language csharp --limit 50
+gh search code "mitchell" --owner carmax-internal --language csharp --limit 50
 
 # Search with path filter
-gh search code "appsettings" --owner your-org --extension json --limit 30
+gh search code "appsettings" --owner carmax-internal --extension json --limit 30
 ```
 
 **Query Syntax**:
@@ -198,7 +198,7 @@ gh search code "appsettings" --owner your-org --extension json --limit 30
 - `path:/src/` - Search in specific paths
 - `filename:Program.cs` - Search in specific files
 - `extension:md` - Search by file extension
-- `org:your-org` - Organization scope
+- `org:carmax-internal` - Organization scope
 
 ---
 
@@ -206,41 +206,41 @@ gh search code "appsettings" --owner your-org --extension json --limit 30
 
 #### Search pull requests
 ```bash
-gh search prs [query] --owner your-org --limit 30
+gh search prs [query] --owner carmax-internal --limit 30
 ```
 
 **Examples**:
 ```bash
 # Find open PRs
-gh search prs "is:open" --owner your-org --limit 20
+gh search prs "is:open" --owner carmax-internal --limit 20
 
 # Find PRs by author
-gh search prs "author:your-github-user" --owner your-org --limit 30
+gh search prs "author:261906_carmax" --owner carmax-internal --limit 30
 
 # Find merged PRs
-gh search prs "is:merged" --owner your-org --limit 20
+gh search prs "is:merged" --owner carmax-internal --limit 20
 
 # Search PR titles
-gh search prs "fix authentication" --owner your-org --state all --limit 20
+gh search prs "fix authentication" --owner carmax-internal --state all --limit 20
 ```
 
 #### List PRs for specific repo
 ```bash
-gh pr list --repo your-org/[repo-name]
+gh pr list --repo carmax-internal/[repo-name]
 ```
 
 **Examples**:
 ```bash
 # List all open PRs
-gh pr list --repo your-org/logistics-shipment-service --state open
+gh pr list --repo carmax-internal/logistics-shipment-service --state open
 
 # List all PRs (including closed)
-gh pr list --repo your-org/ero-modernization-research --state all --limit 50
+gh pr list --repo carmax-internal/ero-modernization-research --state all --limit 50
 ```
 
 #### View PR details
 ```bash
-gh pr view [number] --repo your-org/[repo-name]
+gh pr view [number] --repo carmax-internal/[repo-name]
 ```
 
 ---
@@ -249,24 +249,24 @@ gh pr view [number] --repo your-org/[repo-name]
 
 #### Search issues
 ```bash
-gh search issues [query] --owner your-org --limit 30
+gh search issues [query] --owner carmax-internal --limit 30
 ```
 
 **Examples**:
 ```bash
 # Find open issues
-gh search issues "is:open" --owner your-org --limit 30
+gh search issues "is:open" --owner carmax-internal --limit 30
 
 # Find issues by label
-gh search issues "label:bug" --owner your-org --limit 20
+gh search issues "label:bug" --owner carmax-internal --limit 20
 
 # Find issues assigned to someone
-gh search issues "assignee:your-github-user" --owner your-org --limit 20
+gh search issues "assignee:261906_carmax" --owner carmax-internal --limit 20
 ```
 
 #### List issues for specific repo
 ```bash
-gh issue list --repo your-org/[repo-name]
+gh issue list --repo carmax-internal/[repo-name]
 ```
 
 ---
@@ -275,18 +275,18 @@ gh issue list --repo your-org/[repo-name]
 
 #### View recent commits
 ```bash
-gh api repos/your-org/[repo-name]/commits --paginate --per-page 20
+gh api repos/carmax-internal/[repo-name]/commits --paginate --per-page 20
 ```
 
 **Example with jq parsing**:
 ```bash
-gh api repos/your-org/logistics-shipment-service/commits \
+gh api repos/carmax-internal/logistics-shipment-service/commits \
   --jq '.[] | {message: .commit.message, author: .commit.author.name, date: .commit.author.date}'
 ```
 
 #### Get repository activity
 ```bash
-gh api repos/your-org/[repo-name]
+gh api repos/carmax-internal/[repo-name]
 ```
 
 ---
@@ -297,7 +297,7 @@ gh api repos/your-org/[repo-name]
 
 **Steps**:
 1. Determine the search term (e.g., "EroHeader", "MitchellData")
-2. Use code search to find repos: `gh search code "[term]" --owner your-org`
+2. Use code search to find repos: `gh search code "[term]" --owner carmax-internal`
 3. Extract unique repository names from results
 4. Present list of repositories with brief context
 5. Offer to get more details on specific repos

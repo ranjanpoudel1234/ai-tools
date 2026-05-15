@@ -11,7 +11,7 @@
     The name of the project (e.g., OrderManagement, CustomerPortal)
 
 .PARAMETER OrgPrefix
-    Organization prefix for namespaces (default: Contoso)
+    Organization prefix for namespaces (default: CarMax)
 
 .PARAMETER TargetDir
     Directory where solution will be created (default: ./src)
@@ -34,7 +34,7 @@ param(
     [string]$ProjectName,
     
     [Parameter(Mandatory=$false)]
-    [string]$OrgPrefix = "Contoso",
+    [string]$OrgPrefix = "CarMax",
     
     [Parameter(Mandatory=$false)]
     [string]$TargetDir = "./src",
