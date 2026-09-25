@@ -4,6 +4,12 @@ Personal repository for Claude Code CLI customization, AI experimentation, and e
 
 ## What's Inside
 
+### 🧭 Ranjan Orchestration Pipeline
+
+The `ranjan` agent orchestrates the full software factory pipeline (Spec → Implementation → Harden), coordinating `specifier`, `atlas`, `code-cleaner`, and `hardener` with mandatory user approval gates at each phase:
+
+![Ranjan Orchestration Pipeline](images/ranjan-orchestration-pipeline.png)
+
 ### 🤖 Custom Claude Code Agents
 Specialized sub-agents for complex tasks:
 - **meta-agent** - Creates new sub-agents from descriptions
